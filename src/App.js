@@ -32,16 +32,16 @@ import "./App.css";
 function App() {
   const [todos, setTodos] = useState([
     {
-    text: "Learn about React",
-    isCompleted: false,
+      text: "Learn about React",
+      isCompleted: false,
     },
     {
-    text: "Meet friend for lunch",
-    isCompleted: false,
+      text: "Meet friend for lunch",
+      isCompleted: false,
     },
     {
-    text: "Build really cool todo app",
-    isCompleted: false,
+      text: "Build really cool todo app",
+      isCompleted: false,
     },
   ]);
 
@@ -58,14 +58,18 @@ function App() {
 
   return (
     <div className="app">
-    <div className="todo-list">
-    <h1>My todo list</h1>
-    {todos.map((todo, index) => (
-    <TodoItem todo={todo} key={index} index={index}
-    completeTodo={completeTodo} />
-    ))}
-    <TodoForm addTodo={addTodo} />
-    </div>
+      <div className="todo-list">
+        <h1>My "To Do" List</h1>
+        {todos.map((todo, index) => (
+          <TodoItem
+            todo={todo}
+            key={index}
+            index={index}
+            completeTodo={completeTodo}
+          />
+        ))}
+        <TodoForm addTodo={addTodo} />
+      </div>
     </div>
   );
 }
